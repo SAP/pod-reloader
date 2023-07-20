@@ -56,10 +56,10 @@ webhooks:
   clientConfig:
     service:
       name: pod-reloader-webhook
-      namespace: default 
+      namespace: default
       path: /mutate
       port: 443
-  name: mutate.generic
+  name: mutate.apps.kubernetes
   rules:
   - apiGroups:
     - apps
@@ -73,7 +73,17 @@ webhooks:
     - statefulsets
     - daemonsets
     scope: Namespaced
-  matchPolicy: Exact
+  objectSelector:
+    matchExpressions:
+    - key: pod-reloader.cs.sap.com/ignored
+      operator: NotIn
+      values:
+      - 'true'
+    - key: pod-reloader.cs.sap.com/disabled
+      operator: NotIn
+      values:
+      - 'true'
+  matchPolicy: Equivalent
   sideEffects: None
   timeoutSeconds: 10
   failurePolicy: Fail
