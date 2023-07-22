@@ -70,7 +70,7 @@ jobs:
   update-chart:
     name: Update Helm chart
     runs-on: ubuntu-22.04
-    needs: [publish-docker,publish-crds]
+    needs: [publish-docker]
 
     steps:
     - name: Prepare
