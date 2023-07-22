@@ -134,10 +134,6 @@ jobs:
         fi
         echo "Performing chart version bump: $version_bump ..."
 
-        echo "Updating custom resource definitions ($chart_directory/crds) ..."
-        rm -rf $chart_directory/crds
-        cp -r ../crds $chart_directory
-
         echo "Updating appVersion in $chart_directory/Chart.yaml (current: $old_version; target: $new_version) ..."
         perl -pi -e "s#^appVersion:.*#appVersion: $new_version#g" $chart_directory/Chart.yaml
 
