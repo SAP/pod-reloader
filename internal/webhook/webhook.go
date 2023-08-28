@@ -8,8 +8,12 @@ package webhook
 import (
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
+	"sigs.k8s.io/controller-runtime/pkg/webhook/admission"
 )
 
 func SetupMutatingWebhookWithManager(mgr ctrl.Manager) {
-	mgr.GetWebhookServer().Register("/mutate", &webhook.Admission{Handler: &mutator{scheme: mgr.GetScheme(), client: mgr.GetClient()}})
+	scheme := mgr.GetScheme()
+	client := mgr.GetClient()
+	decoder := admission.NewDecoder(scheme)
+	mgr.GetWebhookServer().Register("/mutate", &webhook.Admission{Handler: &mutator{scheme: scheme, client: client, decoder: decoder}})
 }

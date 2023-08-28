@@ -20,6 +20,7 @@ import (
 func GenerateHash(ctx context.Context, client ctrlclient.Client, namespace string, configMapNames []string, secretNames []string) (string, error) {
 	s := ""
 	for _, configMapName := range configMapNames {
+		s += "configmap/" + namespace + "/" + configMapName + "/"
 		configMap := corev1.ConfigMap{}
 		err := client.Get(ctx, ctrlclient.ObjectKey{Namespace: namespace, Name: configMapName}, &configMap)
 		if err == nil {
@@ -31,6 +32,7 @@ func GenerateHash(ctx context.Context, client ctrlclient.Client, namespace strin
 		}
 	}
 	for _, secretName := range secretNames {
+		s += "secret/" + namespace + "/" + secretName + "/"
 		secret := corev1.Secret{}
 		err := client.Get(ctx, ctrlclient.ObjectKey{Namespace: namespace, Name: secretName}, &secret)
 		if err == nil {

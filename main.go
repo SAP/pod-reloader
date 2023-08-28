@@ -19,6 +19,8 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/healthz"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
+	metricsserver "sigs.k8s.io/controller-runtime/pkg/metrics/server"
+	ctrlwebhook "sigs.k8s.io/controller-runtime/pkg/webhook"
 
 	"github.com/sap/pod-reloader/internal/controller"
 	"github.com/sap/pod-reloader/internal/webhook"
@@ -68,7 +70,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	host, port, err := parseAddress(webhookAddr)
+	webhookHost, webhookPort, err := parseAddress(webhookAddr)
 	if err != nil {
 		setupLog.Error(err, "unable to parse webhook bind address")
 		os.Exit(1)
@@ -84,15 +86,20 @@ func main() {
 	}
 
 	mgr, err := ctrl.NewManager(ctrl.GetConfigOrDie(), ctrl.Options{
-		Scheme:                  scheme,
-		MetricsBindAddress:      metricsAddr,
-		HealthProbeBindAddress:  probeAddr,
-		Host:                    host,
-		Port:                    port,
-		LeaderElection:          enableLeaderElection,
-		LeaderElectionNamespace: leaderElectionNamespace,
-		LeaderElectionID:        LeaderElectionID,
-		CertDir:                 webhookCertDir,
+		Scheme:                        scheme,
+		LeaderElection:                enableLeaderElection,
+		LeaderElectionNamespace:       leaderElectionNamespace,
+		LeaderElectionID:              LeaderElectionID,
+		LeaderElectionReleaseOnCancel: true,
+		WebhookServer: ctrlwebhook.NewServer(ctrlwebhook.Options{
+			Host:    webhookHost,
+			Port:    webhookPort,
+			CertDir: webhookCertDir,
+		}),
+		Metrics: metricsserver.Options{
+			BindAddress: metricsAddr,
+		},
+		HealthProbeBindAddress: probeAddr,
 	})
 	if err != nil {
 		setupLog.Error(err, "unable to start manager")

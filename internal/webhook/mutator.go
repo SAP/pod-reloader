@@ -64,11 +64,6 @@ func (m *mutator) Handle(ctx context.Context, req admission.Request) admission.R
 	return admission.PatchResponseFromRaw(req.Object.Raw, rawObject)
 }
 
-func (m *mutator) InjectDecoder(d *admission.Decoder) error {
-	m.decoder = d
-	return nil
-}
-
 func (m *mutator) handleCreateOrUpdate(ctx context.Context, object runtime.Object) error {
 	log := ctrl.LoggerFrom(ctx)
 	log.V(1).Info("running mutation webhook")
@@ -99,7 +94,7 @@ func (m *mutator) handleCreateOrUpdate(ctx context.Context, object runtime.Objec
 
 	hash, err := reloader.GenerateHashForObject(ctx, m.client, objMeta)
 	if err != nil {
-		return nil
+		return err
 	}
 
 	if injectedHash, ok := objMeta.Annotations[reloader.AnnotationConfigHash]; ok {

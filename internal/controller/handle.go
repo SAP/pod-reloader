@@ -67,7 +67,7 @@ func (h *genericHandler) handle(ctx context.Context, kind string, namespace stri
 			}
 			annotations[reloader.AnnotationConfigHash] = hash
 			object.SetAnnotations(annotations)
-			if err := h.client.Update(ctx, object, &ctrlclient.UpdateOptions{}); err != nil {
+			if err := h.client.Update(ctx, object); err != nil {
 				return err
 			}
 			h.recorder.Eventf(object, corev1.EventTypeNormal, "ConfigurationChanged", "Reload triggered due to change of referenced %s %s/%s", kind, namespace, name)
