@@ -3,7 +3,7 @@ module github.com/sap/pod-reloader
 go 1.21
 
 require (
-	github.com/google/uuid v1.3.0
+	github.com/google/uuid v1.3.1
 	github.com/onsi/ginkgo/v2 v2.12.0
 	github.com/onsi/gomega v1.27.10
 	github.com/pkg/errors v0.9.1
