@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/google/uuid v1.3.1
 	github.com/onsi/ginkgo/v2 v2.13.0
-	github.com/onsi/gomega v1.28.1
+	github.com/onsi/gomega v1.29.0
 	github.com/pkg/errors v0.9.1
 	github.com/sap/go-generics v0.1.5
 	k8s.io/api v0.28.3
