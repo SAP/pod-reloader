@@ -5,7 +5,7 @@ go 1.21.6
 require (
 	github.com/google/uuid v1.5.0
 	github.com/onsi/ginkgo/v2 v2.15.0
-	github.com/onsi/gomega v1.31.0
+	github.com/onsi/gomega v1.31.1
 	github.com/pkg/errors v0.9.1
 	github.com/sap/go-generics v0.1.9
 	k8s.io/api v0.29.1
