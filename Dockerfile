@@ -1,10 +1,10 @@
 # Build the manager binary
-FROM --platform=$BUILDPLATFORM golang:1.23.4 as builder
+FROM --platform=$BUILDPLATFORM golang:1.23.4 AS builder
 ARG TARGETOS
 ARG TARGETARCH
 
 WORKDIR /workspace
-# Copy the Go Modules manifests
+# Copy the go module manifests
 COPY go.mod go.mod
 COPY go.sum go.sum
 # Cache deps before building and copying source so that we don't need to re-download as much
@@ -14,6 +14,7 @@ RUN go mod download
 # Copy the go sources
 COPY main.go main.go
 COPY internal/ internal/
+COPY tests/ tests/
 COPY Makefile Makefile
 
 # Run tests and build
@@ -29,3 +30,4 @@ COPY --from=builder /workspace/manager .
 USER 65532:65532
 
 ENTRYPOINT ["/manager"]
+

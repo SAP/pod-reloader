@@ -41,7 +41,7 @@ func setupSecretHandler(mgr ctrl.Manager) error {
 	if err != nil {
 		return err
 	}
-	if err := c.Watch(source.Kind(mgr.GetCache(), &corev1.Secret{}), &handler.EnqueueRequestForObject{}); err != nil {
+	if err := c.Watch(source.Kind(mgr.GetCache(), &corev1.Secret{}, &handler.TypedEnqueueRequestForObject[*corev1.Secret]{})); err != nil {
 		return err
 	}
 	return nil

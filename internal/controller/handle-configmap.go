@@ -41,7 +41,7 @@ func setupConfigMapHandler(mgr ctrl.Manager) error {
 	if err != nil {
 		return err
 	}
-	if err := c.Watch(source.Kind(mgr.GetCache(), &corev1.ConfigMap{}), &handler.EnqueueRequestForObject{}); err != nil {
+	if err := c.Watch(source.Kind(mgr.GetCache(), &corev1.ConfigMap{}, &handler.TypedEnqueueRequestForObject[*corev1.ConfigMap]{})); err != nil {
 		return err
 	}
 	return nil

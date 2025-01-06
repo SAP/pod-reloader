@@ -54,9 +54,6 @@ var kind string
 func init() {
 	var err error
 
-	// TODO: remove
-	os.Setenv("E2E_ENABLED", "true")
-
 	enabled = os.Getenv("E2E_ENABLED") == "true"
 	kubeconfig = os.Getenv("E2E_KUBECONFIG")
 	image = os.Getenv("E2E_IMAGE")

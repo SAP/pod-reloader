@@ -27,7 +27,7 @@ import (
 type mutator struct {
 	scheme  *runtime.Scheme
 	client  ctrlclient.Client
-	decoder *admission.Decoder
+	decoder admission.Decoder
 }
 
 func (m *mutator) Handle(ctx context.Context, req admission.Request) admission.Response {
