@@ -8,9 +8,9 @@ require (
 	github.com/onsi/gomega v1.36.2
 	github.com/pkg/errors v0.9.1
 	github.com/sap/go-generics v0.2.24
-	k8s.io/api v0.32.0
-	k8s.io/apimachinery v0.32.0
-	k8s.io/client-go v0.32.0
+	k8s.io/api v0.32.1
+	k8s.io/apimachinery v0.32.1
+	k8s.io/client-go v0.32.1
 	sigs.k8s.io/controller-runtime v0.19.4
 	sigs.k8s.io/controller-runtime/tools/setup-envtest v0.0.0-20250114080233-1ec7c1b76e98
 )
