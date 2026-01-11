@@ -71,7 +71,8 @@ Whenever one of the secrets `my-secret`, `my-other-secret`, or the config map `m
 
 To every deployment, stateful set or daemon set that
 - is selected by the pod-reloader's `MutatingWebhookConfiguration` and
-- has at least one of the annotations `pod-reloader.cs.sap.com/configmaps`, `pod-reloader.cs.sap.com/secrets`,
+- has at least one of the annotations `pod-reloader.cs.sap.com/configmaps`, `pod-reloader.cs.sap.com/secrets`
+
 the pod-reloader webhook adds an annotation `pod-reloader.cs.sap.com/config-hash` to the pod template of the corresponding workload set, containing a digest value,
 calculated from the content of all referenced config maps and secrets. If changing, this triggers a rollout of the workload set.
 
