@@ -82,7 +82,7 @@ The `MutatingWebhookConfiguration` registering the pod-reloader webhook should
 - may select (include/exclude) certain namespaces and objects through their labels.
 
 When updating the deployment, stateful set, or daemon set, clients may set the annotation `pod-reloader.cs.sap.com/config-hash`
-(yes, that is is the same annotation which is later added by the webhook on the pod template spec, but on the workload set).
+(yes, that is is the same annotation which is later added by the webhook, but on the pod template spec).
 If the annotation is present, its value must equal the digest calculated by the webhook, and it will be purged by the webhook (so it can be
 considered as a dummy annotation, just triggering the webhook). Otherwise, the webhook rejects the request.
 This way the client can ensure that the reload happens for the exact same config change it has observed. Of course, in case of an error, the client
