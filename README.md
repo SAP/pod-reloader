@@ -67,6 +67,29 @@ spec:
 
 Whenever one of the secrets `my-secret`, `my-other-secret`, or the config map `my-configmap` changes, the pods of the deployment will be recreated.
 
+## How it works in detail
+
+To every deployment, stateful set or daemon set that
+- is selected by the pod-reloader's `MutatingWebhookConfiguration` and
+- has at least one of the annotations `pod-reloader.cs.sap.com/configmaps`, `pod-reloader.cs.sap.com/secrets`,
+the pod-reloader webhook adds an annotation `pod-reloader.cs.sap.com/config-hash` to the pod template of the corresponding workload set, containing a digest value,
+calculated from the content of all referenced config maps and secrets. If changing, this triggers a rollout of the workload set.
+
+The `MutatingWebhookConfiguration` registering the pod-reloader webhook should
+- match deployments, stateful sets and daemon sets and
+- subscribe to `CREATE` and `UPDATE` events and
+- may select (include/exclude) certain namespaces and objects through their labels.
+
+When updating the deployment, stateful set, or daemon set, clients may set the annotation `pod-reloader.cs.sap.com/config-hash`
+(yes, that is is the same annotation which is later added by the webhook on the pod template spec, but on the workload set).
+If the annotation is present, its value must equal the digest calculated by the webhook, and it will be purged by the webhook (so it can be
+considered as a dummy annotation, just triggering the webhook). Otherwise, the webhook rejects the request.
+This way the client can ensure that the reload happens for the exact same config change it has observed. Of course, in case of an error, the client
+should perform some retries.
+
+Now, pod-reloader itself runs a reconcile/watch loop on config maps and secrets. Whenever a config map or secret (referenced through a workload set through the annotations `pod-reloader.cs.sap.com/configmaps` or `pod-reloader.cs.sap.com/secrets`) is created, updated or deleted, then this watch handler
+updates the workload set with the 'dummy' annotation `pod-reloader.cs.sap.com/config-hash` described above, triggering an immediate execution of the webhook.
+
 ## Requirements and Setup
 
 The recommended deployment method is to use the [Helm chart](https://github.com/sap/pod-reloader-helm):

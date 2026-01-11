@@ -31,7 +31,7 @@ func (h *genericHandler) handle(ctx context.Context, kind string, namespace stri
 	objects := make([]ctrlclient.Object, 0)
 
 	// add additional workload types here
-	// TODO: should we allow to restrict workload listing by some selector (would make sense in the case the webhook uses selectors)
+	// TODO: we could add a custom cache index to select only those config objects which are referenced through a workload set
 
 	deploymentList := appsv1.DeploymentList{}
 	if err := h.client.List(ctx, &deploymentList, &ctrlclient.ListOptions{Namespace: namespace}); err != nil {
