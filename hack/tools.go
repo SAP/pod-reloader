@@ -2,7 +2,7 @@
 // +build tools
 
 /*
-SPDX-FileCopyrightText: 2025 SAP SE or an SAP affiliate company and pod-reloader contributors
+SPDX-FileCopyrightText: 2026 SAP SE or an SAP affiliate company and pod-reloader contributors
 SPDX-License-Identifier: Apache-2.0
 */
 
