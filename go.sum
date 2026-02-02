@@ -115,6 +115,8 @@ github.com/sap/go-generics v0.2.49 h1:ac9SPpVoJu+JlsFrnzVEO4LlkjCgfUe5l7PAGMl3Wl
 github.com/sap/go-generics v0.2.49/go.mod h1:qjQnOWyPqymAbx5rX2X4A27+cFS3skRMJlh66sgpA8E=
 github.com/sap/go-generics v0.2.50 h1:fIxqHGrIl3Lsn7JJpGWj+9vLiv5K8H4QmrypaC9G4MQ=
 github.com/sap/go-generics v0.2.50/go.mod h1:qjQnOWyPqymAbx5rX2X4A27+cFS3skRMJlh66sgpA8E=
+github.com/sap/go-generics v0.2.51 h1:2DQhgxjCKqxAjUI7EleJdr8Tk9gPaw+7Zg8u9rEjzvE=
+github.com/sap/go-generics v0.2.51/go.mod h1:l44WLdj6K1R783IriZeBBSHL9CtsSLYyuoHYGGB4PKY=
 github.com/spf13/afero v1.12.0 h1:UcOPyRBYczmFn6yvphxkn9ZEOY65cpwGKb5mL36mrqs=
 github.com/spf13/afero v1.12.0/go.mod h1:ZTlWwG4/ahT8W7T0WQ5uYmjI9duaLQGy3Q2OAl4sk/4=
 github.com/spf13/pflag v1.0.9 h1:9exaQaMOCwffKiiiYk6/BndUBv+iRViNW+4lEMi0PvY=
@@ -219,6 +221,7 @@ sigs.k8s.io/controller-runtime/tools/setup-envtest v0.0.0-20260120065648-aebc15d
 sigs.k8s.io/controller-runtime/tools/setup-envtest v0.0.0-20260125161707-82cc073adb06/go.mod h1:/BwOHkjE31BJ0eqwWNH+XizfhDZv+GqzOGcJFN9iWvw=
 sigs.k8s.io/controller-runtime/tools/setup-envtest v0.0.0-20260126224948-cf2e741fe0fd/go.mod h1:/BwOHkjE31BJ0eqwWNH+XizfhDZv+GqzOGcJFN9iWvw=
 sigs.k8s.io/controller-runtime/tools/setup-envtest v0.0.0-20260131020224-aba4afecb038/go.mod h1:/BwOHkjE31BJ0eqwWNH+XizfhDZv+GqzOGcJFN9iWvw=
+sigs.k8s.io/controller-runtime/tools/setup-envtest v0.0.0-20260202103230-8ebd0ffa23d3/go.mod h1:/BwOHkjE31BJ0eqwWNH+XizfhDZv+GqzOGcJFN9iWvw=
 sigs.k8s.io/json v0.0.0-20250730193827-2d320260d730 h1:IpInykpT6ceI+QxKBbEflcR5EXP7sU1kvOlxwZh5txg=
 sigs.k8s.io/json v0.0.0-20250730193827-2d320260d730/go.mod h1:mdzfpAEoE6DHQEN0uh9ZbOCuHbLK5wOm7dK4ctXE9Tg=
 sigs.k8s.io/randfill v1.0.0 h1:JfjMILfT8A6RbawdsK2JXGBR5AQVfd+9TbzrlneTyrU=
