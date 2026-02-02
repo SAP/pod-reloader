@@ -7,12 +7,12 @@ require (
 	github.com/onsi/ginkgo/v2 v2.28.1
 	github.com/onsi/gomega v1.39.1
 	github.com/pkg/errors v0.9.1
-	github.com/sap/go-generics v0.2.50
+	github.com/sap/go-generics v0.2.51
 	k8s.io/api v0.35.0
 	k8s.io/apimachinery v0.35.0
 	k8s.io/client-go v0.35.0
 	sigs.k8s.io/controller-runtime v0.23.1
-	sigs.k8s.io/controller-runtime/tools/setup-envtest v0.0.0-20260131020224-aba4afecb038
+	sigs.k8s.io/controller-runtime/tools/setup-envtest v0.0.0-20260202103230-8ebd0ffa23d3
 )
 
 require (
