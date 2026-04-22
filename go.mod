@@ -9,7 +9,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/sap/go-generics v0.2.57
 	k8s.io/api v0.35.4
-	k8s.io/apimachinery v0.36.0-rc.1
+	k8s.io/apimachinery v0.36.0
 	k8s.io/client-go v0.35.4
 	sigs.k8s.io/controller-runtime v0.23.3
 	sigs.k8s.io/controller-runtime/tools/setup-envtest v0.0.0-20260418192536-e4a998cc6b09
