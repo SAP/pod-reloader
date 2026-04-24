@@ -12,7 +12,7 @@ require (
 	k8s.io/apimachinery v0.36.0
 	k8s.io/client-go v0.35.4
 	sigs.k8s.io/controller-runtime v0.23.3
-	sigs.k8s.io/controller-runtime/tools/setup-envtest v0.0.0-20260418192536-e4a998cc6b09
+	sigs.k8s.io/controller-runtime/tools/setup-envtest v0.0.0-20260424122448-c8b4b9d61fbd
 )
 
 require (
