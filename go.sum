@@ -167,6 +167,8 @@ github.com/sap/go-generics v0.2.62 h1:7G0IP8+O330ofqbJOlOjmyzinnQIR4tid2CWoZwC8/
 github.com/sap/go-generics v0.2.62/go.mod h1:wjKWkUDMjx1v6gRXNsqTjdwd0uYGPhWnE3r2dUuhd2o=
 github.com/sap/go-generics v0.2.63 h1:LCr6C2LJi65lLLFXK0yiYpF5ews9N24oIAz7pK/6J7o=
 github.com/sap/go-generics v0.2.63/go.mod h1:VgQx6yybDpJgxju7rC/gjmr3BDJIuZSbCb68rtMyB+o=
+github.com/sap/go-generics v0.2.64 h1:ermnZpLIbexv28qfQ6NWJbij1HxYzx8vYCt5JuNpDJU=
+github.com/sap/go-generics v0.2.64/go.mod h1:71WD2/ZzFVRxh5UnYb7VaszpWf8LziqNdM/+RN0OZXc=
 github.com/spf13/afero v1.12.0 h1:UcOPyRBYczmFn6yvphxkn9ZEOY65cpwGKb5mL36mrqs=
 github.com/spf13/afero v1.12.0/go.mod h1:ZTlWwG4/ahT8W7T0WQ5uYmjI9duaLQGy3Q2OAl4sk/4=
 github.com/spf13/pflag v1.0.9 h1:9exaQaMOCwffKiiiYk6/BndUBv+iRViNW+4lEMi0PvY=
