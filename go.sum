@@ -120,8 +120,8 @@ github.com/prometheus/procfs v0.21.1 h1:GljZCt+zSTS+NZq88cyQ1LjZ+RCHp3uVuabBWA5+
 github.com/prometheus/procfs v0.21.1/go.mod h1:aB55Cww9pdSJVHk0hUf0inxWyyjPogFIjmHKYgMKmtY=
 github.com/rogpeppe/go-internal v1.14.1 h1:UQB4HGPB6osV0SQTLymcB4TgvyWu6ZyliaW0tI/otEQ=
 github.com/rogpeppe/go-internal v1.14.1/go.mod h1:MaRKkUm5W0goXpeCfT7UZI6fk/L7L7so1lCWt35ZSgc=
-github.com/sap/go-generics v0.2.76 h1:mp7jnfdaJuePvCq2DbTJdyK6yXGWUzMaZAqhlcsH9Ao=
-github.com/sap/go-generics v0.2.76/go.mod h1:mW7pkxK01k/v+9TdoqHUdmiShl3iZgeLUlFxLoZg5dI=
+github.com/sap/go-generics v0.2.77 h1:vCMDHRXcrviHomEStwhrUJWf82kzcfU2N2/dt6VnEko=
+github.com/sap/go-generics v0.2.77/go.mod h1:mW7pkxK01k/v+9TdoqHUdmiShl3iZgeLUlFxLoZg5dI=
 github.com/spf13/afero v1.12.0 h1:UcOPyRBYczmFn6yvphxkn9ZEOY65cpwGKb5mL36mrqs=
 github.com/spf13/afero v1.12.0/go.mod h1:ZTlWwG4/ahT8W7T0WQ5uYmjI9duaLQGy3Q2OAl4sk/4=
 github.com/spf13/pflag v1.0.10 h1:4EBh2KAYBwaONj6b2Ye1GiHfwjqyROoF4RwYO+vPwFk=
